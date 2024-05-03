@@ -1,0 +1,13 @@
+INSERT INTO food_info (`tip`,`foodname`) VALUES ('냉장보관을 해야한다.','양파');
+INSERT INTO food_info (`tip`,`foodname`) VALUES ('내장보관을 해야한다.','대파');
+INSERT INTO food_info (`tip`,`foodname`) VALUES ('내장보관을 해야한다.','우유');
+INSERT INTO food_info (`tip`,`foodname`) VALUES ('내장보관을 해야한다.','샌드위치');
+INSERT INTO member (`email`,`nickname`,`username`,`password`,`birth`) VALUES ('aaa@naver.com','가나','홍길동','1234','999999');
+INSERT INTO member (`email`,`nickname`,`username`,`password`,`birth`) VALUES ('bbb@naver.com','가나','홍길동','1234','999999');
+INSERT INTO member (`email`,`nickname`,`username`,`password`,`birth`) VALUES ('ccc@naver.com','가나','홍길동','1234','999999');
+INSERT INTO member (`cdate`, `email`, `nickname`, `password`, `udate`, `username`, `birth`) VALUES (now(), 'ddd@naver.com', 'ddd','1234', now(), 'dddd', '123124');
+INSERT INTO member (`cdate`, `email`, `nickname`, `password`, `udate`, `username`, `birth`) VALUES (now(), 'eee@naver.com', 'ddd','1234', now(), 'dddd', '123124');
+INSERT INTO cold_storage (`quantity`,`foodtype`,`member_id`,`foodinfo_id`,`regdate`) VALUES ('1','양파','1','1',now());
+INSERT INTO cold_storage (`quantity`,`foodtype`,`member_id`,`foodinfo_id`,`regdate`) VALUES ('1','대파','2','2',now());
+INSERT INTO cold_storage (`quantity`,`foodtype`,`member_id`,`foodinfo_id`,`regdate`) VALUES ('1','우유','3','3',now());
+INSERT INTO cold_storage (`quantity`,`foodtype`,`member_id`,`foodinfo_id`,`regdate`) VALUES ('1','샌드위치','4','4',now());
