@@ -1,14 +1,17 @@
 package com.green.onezo.jwt;
 
-import lombok.Builder;
-import lombok.Data;
-import lombok.Getter;
+import com.green.onezo.enum_column.Role;
+import lombok.*;
 
-@Getter
 @Builder
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class JwtTokenDto {
+
+    private long memberId;
 
     private String accessToken;
     private String refeshToken;
+
 }

@@ -4,6 +4,24 @@ import lombok.*;
 
 public class FindDto {
 
+    @Getter
+    @Setter
+    @ToString
+    @Builder
+    @NoArgsConstructor
+    @AllArgsConstructor
+    public static class InfoRes {
+
+        private String userId;
+
+        private String name;
+
+        private String nickname;
+
+        private String phone;
+
+    }
+
 
     @Getter
     @Setter
@@ -24,8 +42,4 @@ public class FindDto {
     public static class PasswordRes {
         private String password;
     }
-
-
-
-
 }

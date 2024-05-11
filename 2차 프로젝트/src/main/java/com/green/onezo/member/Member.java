@@ -8,6 +8,8 @@ import com.green.onezo.enum_column.Role;
 import com.green.onezo.pay.Pay;
 import jakarta.persistence.*;
 import lombok.*;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -50,10 +52,12 @@ public class Member {
     @OneToMany(mappedBy = "member")
     private List<Pay> pays = new ArrayList<>();
 
+
+    private User member;
+
     public void addPay(Pay pay) {
         pays.add(pay);
         pay.setMember(this);
     }
-
 
 }

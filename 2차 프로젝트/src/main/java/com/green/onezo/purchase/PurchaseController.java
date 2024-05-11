@@ -23,21 +23,24 @@ import java.util.List;
 public class PurchaseController {
     private final PurchaseService purchaseService;
 
-    @GetMapping("/record/{purchaseId}")
-
-    public ResponseEntity<PurchaseDto> getRecord(@PathVariable Long purchaseId){
-        PurchaseDto result = purchaseService.getPurchase(purchaseId);
+    @Operation(summary = "주문 조회",
+            description = "주문 조회"
+    )
+    @GetMapping("/record")
+    public ResponseEntity<List<PurchaseDto>> getRecord(){
+        List<PurchaseDto> result = purchaseService.getPurchase();
         if (result == null) {
             ResponseEntity.status(HttpStatus.NOT_FOUND).body(result);
         }
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
+    @Operation(summary = "주문 상세 조회",
+            description = "주문 상세 조회"
+    )
     @GetMapping("/detail/{id}")
-
-    public ResponseEntity<PurchaseDetailDto> getDetail(@PathVariable Long id){
+    public ResponseEntity<PurchaseDetailDto> getDetail(Long id) {
         PurchaseDetailDto result = purchaseService.getDetail(id);
         if (result == null) {
-
             ResponseEntity.status(HttpStatus.NOT_FOUND).body(result);
         }
         return ResponseEntity.status(HttpStatus.OK).body(result);

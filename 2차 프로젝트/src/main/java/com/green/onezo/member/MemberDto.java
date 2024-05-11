@@ -17,9 +17,10 @@ public class MemberDto {
 
     private Long id;
 
+    @Schema(description = "사용자 아이디")
+    @Pattern(regexp = "^[a-zA-Z0-9]+$", message = "아이디는 영어 대소문자나 숫자로만 입력해주세요.")
+    @Size(min = 5, max = 20, message = "아이디는 5글자에서 20글자 사이로 입력해주세요.")
     @NotBlank(message = "아이디는 필수 입력 사항입니다.")
-    @Size(min = 5, max = 20, message = "아이디는 최소 5자 이상 20자 이하로 입력해야합니다.")
-    @Schema(description = "사용자 고유 아이디")
     private String userId;
 
     @NotBlank(message = "패스워드는 필수 입력 사항입니다.")
